@@ -1,5 +1,6 @@
 ﻿using HenrancaPoli.Entities;
 using System;
+using System.Globalization;
 
 namespace HenrancaPoli
 {
@@ -14,6 +15,21 @@ namespace HenrancaPoli
 
             for(int i = 1; i <= n; i++)
             {
+                Console.WriteLine($"Tax payer #{i} data: ");
+                Console.Write("Individual or company (i/c) ? ");
+                char ch = char.Parse(Console.ReadLine());
+
+                if(ch == 'i')
+                {
+                    Console.Write("Name: ");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Anual income: ");
+                    double anualInc = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
+                    Console.Write("Health expenditures: ");
+                    double healthExp = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                    list.Add(new PessoaFisica(name, anualInc, healthExp));
+                }
 
             }
 
