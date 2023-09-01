@@ -55,7 +55,7 @@ namespace HenrancaPoli
             foreach (Contribuintes contri in list )
             {
                 Console.WriteLine($"{contri.Name}: ${contri.Tax().ToString("F2", CultureInfo.InvariantCulture)} ");
-                taxTotal += (double) contri.Tax();
+                taxTotal +=  contri.Tax();
             }
 
             Console.WriteLine($"Total Taxes: ${taxTotal.ToString("F2",CultureInfo.InvariantCulture)}");
