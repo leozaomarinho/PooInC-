@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HenrancaPoli.Entities
 {
-    public class PessoaJuridica : Contribuintes
+     class PessoaJuridica : Contribuintes
     {
         public int NumberOfEmployees { get; set; }
 
