@@ -39,7 +39,7 @@ namespace HenrancaPoli
                     Console.Write("Number of employees? ");
                     int empl = int.Parse(Console.ReadLine());
 
-                    list.Add(new PessoaJuridica(name,anualInc,empl))
+                    list.Add(new PessoaJuridica(name, anualInc, empl));
                 }
 
                 else
@@ -55,10 +55,10 @@ namespace HenrancaPoli
             foreach (Contribuintes contri in list )
             {
                 Console.WriteLine($"{contri.Name}: ${contri.Tax().ToString("F2", CultureInfo.InvariantCulture)} ");
-                taxTotal += contri.Tax;
+                taxTotal += (double) contri.Tax();
             }
 
-            Console.WriteLine($"Total Taxes: ${taxTotal.ToString(F2)}");
+            Console.WriteLine($"Total Taxes: ${taxTotal.ToString("F2",CultureInfo.InvariantCulture)}");
         }
     }
 }
