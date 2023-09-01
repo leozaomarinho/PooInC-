@@ -30,9 +30,35 @@ namespace HenrancaPoli
 
                     list.Add(new PessoaFisica(name, anualInc, healthExp));
                 }
+                else if(ch == 'c')
+                {
+                    Console.Write("Name: ");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Anual income: ");
+                    double anualInc = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.Write("Number of employees? ");
+                    int empl = int.Parse(Console.ReadLine());
+
+                    list.Add(new PessoaJuridica(name,anualInc,empl))
+                }
+
+                else
+                {
+                    Console.WriteLine("Opção invalida!");
+                }
 
             }
 
+            Console.WriteLine("Total Paid:");
+            double taxTotal = 0;    
+
+            foreach (Contribuintes contri in list )
+            {
+                Console.WriteLine($"{contri.Name}: ${contri.Tax().ToString("F2", CultureInfo.InvariantCulture)} ");
+                taxTotal += contri.Tax;
+            }
+
+            Console.WriteLine($"Total Taxes: ${taxTotal.ToString(F2)}");
         }
     }
 }

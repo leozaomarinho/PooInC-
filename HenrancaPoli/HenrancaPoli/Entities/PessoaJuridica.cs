@@ -19,7 +19,16 @@ namespace HenrancaPoli.Entities
 
         public override double Tax()
         {
-            
+            if (NumberOfEmployees > 10)
+            {
+                double imp = AnualIncome * 0.14;
+                return imp;
+            }
+            else
+            {
+                double imp = AnualIncome * 0.16;
+                return imp;
+            }
         }
 
 
