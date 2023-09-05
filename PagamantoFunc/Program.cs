@@ -23,28 +23,44 @@ namespace Pagamento
                     Console.WriteLine($"Employe number #{i} data:");
                     Console.Write("OutSourced (y/n)? ");
                     char ch = char.Parse(Console.ReadLine());
-                    Console.Write("Name: ");
-                    string name = Console.ReadLine();
-                    Console.Write("Hours: ");
-                    int hours = int.Parse(Console.ReadLine());
+                   
 
-                    Console.Write("Value per hour: ");
-                    double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                }
-                if (ch == 'y')
-                {
-                    Console.Write("Additional charge: ");
-                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    if (ch == 'y')
+                    {
+                        Console.Write("Name: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Hours: ");
+                        int hours = int.Parse(Console.ReadLine());
 
-                    list.Add(new OutsourcedEmploye(name,hours,valuePerHour,additionalCharge));
+                        Console.Write("Value per hour: ");
+                        double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        Console.Write("Additional charge: ");
+                        double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        list.Add(new OutsourcedEmploye(name, hours, valuePerHour, additionalCharge));
+                    }
+                    else if (ch == 'n')
+                    {
+                        Console.Write("Name: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Hours: ");
+                        int hours = int.Parse(Console.ReadLine());
+
+                        Console.Write("Value per hour: ");
+                        double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                        list.Add(new Employes(name, hours, valuePerHour));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Escolha uma opção valida!");
+                    }
                 }
-                else if(ch =='n')
+
+                catch(SystemException)
                 {
-                    list.Add(new Employes(name,hours,valuePerHour));
-                }
-                else
-                {
-                    Console.WriteLine("Escolha uma opção valida!");
+                    Console.WriteLine("Entrada invalida, Digite uma entrada valida!");
                 }
                 Console.WriteLine("--------------------------------------------------");
             }
