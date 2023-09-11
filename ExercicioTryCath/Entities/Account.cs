@@ -36,6 +36,18 @@ class Account
 
     public void Withdraw(double amount)
     {
+        if (amount > WithdrawLimit)
+        {
+            throw new Exception("O valor do saque não pode exceder o limite de saque!");
 
+        }
+        else
+        {
+
+            Balance -= amount;
+
+            Console.WriteLine($"Saque no valor de ${amount.ToString("F2")}, Realizado com sucesso!");
+            Console.WriteLine($"saldo atualizado ${Balance}");
+        }
     }
 }
