@@ -6,6 +6,7 @@ namespace exercicio
     {
         static void Main(string[] args)
         {
+            Console.WriteLine();
 
         }
     }
