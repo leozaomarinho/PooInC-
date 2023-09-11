@@ -61,9 +61,7 @@ namespace Pagamento
                 catch(SystemException)
                 {
                     Console.WriteLine("Entrada invalida, Digite uma entrada valida!");
-                    Console.WriteLine($"Employe number #{i} data:");
-                    Console.Write("OutSourced (y/n)? ");
-                    char ch = char.Parse(Console.ReadLine());
+                  
                 }
                 Console.WriteLine("--------------------------------------------------");
             }
