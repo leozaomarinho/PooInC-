@@ -1,3 +1,5 @@
+using System;
+using Exercicio.Entities;
 class Account
 {
     public int Number { get; set; }
@@ -28,7 +30,7 @@ class Account
             Console.WriteLine("Deposito realizado, saldo atualizado!");
         }
         else {
-            throw new Exception("O valor do deposito não pode ser menor ou igual a zero!");
+            throw new DomainException ("O valor do deposito não pode ser menor ou igual a zero!");
         
         }
 
@@ -38,7 +40,7 @@ class Account
     {
         if (amount > WithdrawLimit)
         {
-            throw new Exception("O valor do saque não pode exceder o limite de saque!");
+            throw new DomainException ("O valor do saque não pode exceder o limite de saque!");
 
         }
         else
@@ -47,7 +49,7 @@ class Account
             Balance -= amount;
 
             Console.WriteLine($"Saque no valor de ${amount.ToString("F2")}, Realizado com sucesso!");
-            Console.WriteLine($"saldo atualizado ${Balance}");
+            Console.WriteLine($"saldo atualizado ${Balance.ToString("F2")}");
         }
     }
 }

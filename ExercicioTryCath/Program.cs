@@ -1,7 +1,7 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace exercicio
+
+namespace Exercicio
 {
     class Program
     {
@@ -9,8 +9,7 @@ namespace exercicio
         {
            
 
-            try
-            {
+           
                 List<Account> accounts = new List<Account>();
 
                 Console.WriteLine("Enter account data");
@@ -23,10 +22,21 @@ namespace exercicio
                 Console.Write("Withdraw limit: ");
                 double withdrawLimit = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
 
-                accounts.Add(new Account (number,holder,balance,withdrawLimit));
-            }
-            catch { }
+                Account account =  new Account (number,holder,balance,withdrawLimit);
 
+            Console.WriteLine();
+            Console.Write("Enter amount for withdraw:");
+            double amount = double.Parse (Console.ReadLine(),CultureInfo.InvariantCulture);
+
+            try
+            {
+                account.Withdraw(amount);
+                
+            }
+            catch (DomainException)
+            {
+
+            }
         }
     }
 }
