@@ -2,7 +2,7 @@
 using System;
 
 using ExercicioTryCath.Entities;
-
+using ExercicioTryCath.Entities.Exceptions;
 
 namespace ExercicioTryCath.Entities
 {
@@ -37,9 +37,9 @@ namespace ExercicioTryCath.Entities
 
 
             }
-            catch (Exception)
+            catch (DomainException e)
             {
-                Console.WriteLine("Withdraw error: " + );
+                Console.WriteLine($"Withdraw error: {e.Message}");
             }
         }
     }

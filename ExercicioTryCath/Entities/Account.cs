@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using ExercicioTryCath.Entities;
+using ExercicioTryCath.Entities.Exceptions;
 
 
 public class Account
@@ -45,6 +46,10 @@ public class Account
         {
             throw new  ("O valor do saque não pode exceder o limite de saque!");
 
+        }
+        if (amount > Balance)
+        {
+            throw new DomainException("Not enough balace!");
         }
         else
         {
